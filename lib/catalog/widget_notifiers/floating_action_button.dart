@@ -117,7 +117,7 @@ FloatingActionButton(
 
   @override
   void registerFields() {
-    stringField(id: "tooltip", title: "Tooltip");
+    stringField(id: "tooltip", title: "Tooltip", initialValue: 'click here');
     colorField(id: "foregroundColor", title: "Foreground Color");
     colorField(id: "backgroundColor", title: "Background Color");
     colorField(id: "focusColor", title: "Focus Color");
@@ -125,7 +125,7 @@ FloatingActionButton(
     colorField(id: "splashColor", title: "Splash Color");
     doubleField(id: "elevation", title: "Elevation");
     doubleField(id: "focusElevation", title: "Focus Elevation");
-    doubleField(id: "hoverElevation", title: "Hover Elevation");
+    doubleField(id: "hoverElevation", title: "Hover Elevation", initialValue: 8.0);
     doubleField(id: "highlightElevation", title: "Highlight Elevation");
     doubleField(id: "disabledElevation", title: "Disabled Elevation");
     listField<MouseCursor>(

@@ -7,6 +7,8 @@ import 'package:flutter_quest/property_fields/main_axis_size_field.dart';
 import 'package:flutter_quest/property_fields/text_direction_field.dart';
 import 'package:flutter_quest/property_fields/vertical_direction_field.dart';
 
+import '../../main.dart';
+
 typedef RowProperties = ({
   MainAxisAlignment? mainAxisAlignment,
   MainAxisSize? mainAxisSize,
@@ -29,7 +31,23 @@ class RowPropertiesNotifier extends PropertiesNotifier<RowProperties> {
       verticalDirection:
           fieldValues.verticalDirection ?? VerticalDirection.down,
       textBaseline: fieldValues.textBaseLine,
-      children: const [],
+      children:  [
+        Container(
+          height: 90,
+          width: 90,
+          color: themeColorNotifier.value,
+        ),
+        Container(
+          height: 90,
+          width: 90,
+          color: themeColorNotifier.value.withOpacity(0.6),
+        ),
+        Container(
+          height: 90,
+          width: 90,
+          color: themeColorNotifier.value.withOpacity(0.3),
+        ),
+      ],
     );
   }
 

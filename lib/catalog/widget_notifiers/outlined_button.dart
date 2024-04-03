@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_quest/core/property_provider.dart';
+import 'package:flutter_quest/main.dart';
 import 'package:flutter_quest/property_fields/alignment_field.dart';
 import 'package:flutter_quest/property_fields/boolean_field.dart';
 import 'package:flutter_quest/property_fields/clip_field.dart';
@@ -260,13 +261,13 @@ class OutlinedButtonPropertiesNotifier
   void registerFields() {
     booleanField(id: "autofocus", title: "Autofocus");
     clipField(id: "clipBehavior", title: "Clip Behavior");
-    colorField(id: "backgroundColor", title: "Background Color");
+    colorField(id: "backgroundColor", title: "Background Color", initialValue: themeColorNotifier.value.withOpacity(0.2));
     colorField(id: "foregroundColor", title: "Foreground Color");
-    colorField(id: "overlayColor", title: "Overlay Color");
+    colorField(id: "overlayColor", title: "Overlay Color", initialValue: Colors.grey[200]);
     colorField(id: "shadowColor", title: "Shadow Color");
     colorField(id: "surfaceTintColor", title: "Surface Tint Color");
     doubleField(id: "elevation", title: "Elevation");
-    edgeInsetsField(id: "padding", title: "Padding");
+    edgeInsetsField(id: "padding", title: "Padding", initialValue: EdgeInsets.all(15.0));
     doubleField(id: "minHeight", title: "Minimum Height");
     doubleField(id: "minWidth", title: "Minimum Width");
     doubleField(id: "maxHeight", title: "Maximum Height");
@@ -276,7 +277,7 @@ class OutlinedButtonPropertiesNotifier
     colorField(id: "iconColor", title: "Icon Color");
     doubleField(id: "iconSize", title: "Icon Size");
     colorField(id: "borderColor", title: "Border Color");
-    doubleField(id: "borderWidth", title: "Border Width");
+    doubleField(id: "borderWidth", title: "Border Width",initialValue: 0.6);
     listField(
         id: "borderStyle", title: "Border Style", values: BorderStyle.values);
     listField(id: "strokeAlign", title: "Stroke Align", values: [

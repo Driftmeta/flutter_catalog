@@ -10,6 +10,8 @@ import 'package:flutter_quest/property_fields/number_field.dart';
 import 'package:flutter_quest/property_fields/string_field.dart';
 import 'package:flutter_quest/property_fields/text_style_field.dart';
 
+import '../../main.dart';
+
 typedef IconButtonProperties = ({
   double? iconSize,
   VisualDensity? visualDensity,
@@ -321,11 +323,11 @@ IconButton(
           VisualDensity.compact,
           VisualDensity.adaptivePlatformDensity
         ]);
-    iconDataField(id: "icon", title: "Icon");
+    iconDataField(id: "icon", title: "Icon", initialValue: Icons.add);
     edgeInsetsField(id: "padding", title: "Padding");
     alignmentField(id: "alignment", title: "Alignment");
     doubleField(id: "splashRadius", title: "Splash Radius");
-    colorField(id: "color", title: "Color");
+    colorField(id: "color", title: "Color",initialValue: themeColorNotifier.value);
     colorField(id: "focusColor", title: "Focus Color");
     colorField(id: "hoverColor", title: "Hover Color");
     colorField(id: "highlightColor", title: "Highlight Color");
@@ -335,7 +337,7 @@ IconButton(
         id: "mouseCursor",
         title: "MouseCursor",
         values: [MouseCursor.defer, MouseCursor.uncontrolled]);
-    stringField(id: "tooltip", title: "Tooltip");
+    stringField(id: "tooltip", title: "Tooltip", initialValue: 'click here');
     booleanField(id: "enableFeedback", title: "Enable Feedback");
     doubleField(id: "minWidth", title: "Minimum Width");
     doubleField(id: "maxWidth", title: "Maximum Width");
@@ -343,7 +345,7 @@ IconButton(
     doubleField(id: "maxHeight", title: "Maximum Height");
     colorField(id: "backgroundColor", title: "Background Color");
     colorField(id: "foregroundColor", title: "Foreground Color");
-    colorField(id: "overlayColor", title: "Overlay Color");
+    colorField(id: "overlayColor", title: "Overlay Color", initialValue: Colors.black12);
     colorField(id: "shadowColor", title: "Shadow Color");
     colorField(id: "surfaceTintColor", title: "Surface Tint Color");
     doubleField(id: "elevation", title: "Elevation");
@@ -354,9 +356,9 @@ IconButton(
     doubleField(id: "maxWidth", title: "Maximum Width");
     doubleField(id: "fixedHeight", title: "Fixed Height");
     doubleField(id: "fixedWidth", title: "Fixed Width");
-    colorField(id: "iconColor", title: "Icon Color");
+    colorField(id: "iconColor", title: "Icon Color",initialValue: themeColorNotifier.value);
     doubleField(id: "iconSize", title: "Icon Size");
-    colorField(id: "borderColor", title: "Border Color");
+    colorField(id: "borderColor", title: "Border Color" ,initialValue: themeColorNotifier.value);
     doubleField(id: "borderWidth", title: "Border Width");
     listField(
         id: "borderStyle", title: "Border Style", values: BorderStyle.values);

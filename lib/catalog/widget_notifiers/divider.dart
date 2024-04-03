@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_quest/core/property_provider.dart';
+import 'package:flutter_quest/main.dart';
 import 'package:flutter_quest/property_fields/color_field.dart';
 import 'package:flutter_quest/property_fields/number_field.dart';
 
@@ -68,7 +69,7 @@ class DividerPropertiesNotifier extends PropertiesNotifier<DividerProperties> {
     colorField(
       id: "color",
       title: 'Color',
-      initialValue: Colors.blue,
+      initialValue: themeColorNotifier.value
     );
   }
 }

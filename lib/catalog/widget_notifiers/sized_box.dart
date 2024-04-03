@@ -39,7 +39,7 @@ class SizedBoxPropertiesNotifier
 
   @override
   void registerFields() {
-    heightField();
-    widthField();
+    heightField(initialValue: 100);
+    widthField(initialValue: 100);
   }
 }

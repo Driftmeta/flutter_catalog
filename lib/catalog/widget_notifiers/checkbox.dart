@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_quest/core/property_provider.dart';
+import 'package:flutter_quest/main.dart';
 import 'package:flutter_quest/property_fields/boolean_field.dart';
 import 'package:flutter_quest/property_fields/color_field.dart';
 import 'package:flutter_quest/property_fields/list_field.dart';
@@ -155,6 +156,7 @@ class CheckboxPropertiesNotifier
     booleanField(
       id: "value",
       title: "Value",
+      initialValue: false,
     );
     booleanField(
       id: "triState",
@@ -165,11 +167,11 @@ class CheckboxPropertiesNotifier
       title: "MouseCursor",
       values: [MouseCursor.defer, MouseCursor.uncontrolled],
     );
-    colorField(id: 'fillColor', title: 'Fill Color');
-    colorField(id: 'checkColor', title: 'Check Color');
+    colorField(id: 'fillColor', title: 'Fill Color',initialValue: Colors.grey[300]);
+    colorField(id: 'checkColor', title: 'Check Color',initialValue: themeColorNotifier.value);
     colorField(id: 'focusColor', title: 'Color Field');
     colorField(id: 'hoverColor', title: 'Hover Color');
-    colorField(id: 'overLayColor', title: 'Overlay Color');
+    colorField(id: 'overLayColor', title: 'Overlay Color',initialValue: themeColorNotifier.value.withOpacity(0.3));
     doubleField(id: 'splashRadius', title: 'Splash Radius');
     listField<MaterialTapTargetSize>(
       id: "materialTapTargetSize",
@@ -186,6 +188,6 @@ class CheckboxPropertiesNotifier
         id: "borderStyle", title: "Border Style", values: BorderStyle.values);
     doubleField(id: 'strokeAlign');
     booleanField(id: 'isError', title: 'Is Error');
-    stringField(id: 'semanticLabel', title: 'Semantic Label');
+    stringField(id: 'semanticLabel', title: 'Semantic Label', initialValue: "Checkbox");
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_quest/core/property_provider.dart';
+import 'package:flutter_quest/main.dart';
 import 'package:flutter_quest/property_fields/boolean_field.dart';
 import 'package:flutter_quest/property_fields/clip_field.dart';
 import 'package:flutter_quest/property_fields/color_field.dart';
@@ -258,28 +259,28 @@ AppBar(
 
   @override
   void registerFields() {
-    iconDataField(id: "leading", title: "Leading Widget");
+    iconDataField(id: "leading", title: "Leading Widget", initialValue: Icons.menu);
     booleanField(
         id: "automaticallyImplyLeading", title: "Automatically Imply Leading");
-    stringField(id: "title", title: "Title Widget");
-    iconDataField(id: "action", title: "Action Widget");
+    stringField(id: "title", title: "Title Widget", initialValue: "My App");
+    iconDataField(id: "action", title: "Action Widget", initialValue: Icons.search);
     iconDataField(id: "flexibleSpace", title: "flexibleSpace");
     doubleField(id: "preferredHeight", title: "Bottom Preferred Height");
     iconDataField(id: "preferredChild", title: "Preferred Child");
-    doubleField(id: "elevation", title: "Elevation");
+    doubleField(id: "elevation", title: "Elevation", initialValue: 40.0);
     doubleField(
         id: "scrolledUnderElevation", title: "Scrolled Under Elevation");
     colorField(id: "shadowColor", title: "Shadow Color");
     colorField(id: "surfaceTintColor", title: "Surface Tint Color");
-    shapeBorderField(id: "shape", title: "Shape");
-    colorField(id: "backgroundColor", title: "Background Color");
-    colorField(id: "foregroundColor", title: "Foreground Color");
-    doubleField(id: "iconSize", title: "IconTheme Size");
+    shapeBorderField(id: "shape", title: "Shape", initialValue: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8.0)));
+    colorField(id: "backgroundColor", title: "Background Color", initialValue: themeColorNotifier.value);
+    colorField(id: "foregroundColor", title: "Foreground Color", initialValue: Colors.white);
+    doubleField(id: "iconSize", title: "IconTheme Size", initialValue: 24.0);
     doubleField(id: "iconFill", title: "IconTheme Fill");
-    doubleField(id: "iconWeight", title: "IconTheme Weight");
+    doubleField(id: "iconWeight", title: "IconTheme Weight", initialValue: null);
     doubleField(id: "iconGrade", title: "IconTheme Grade");
     doubleField(id: "iconOpticalSize", title: "IconTheme Optical Size");
-    colorField(id: "iconColor", title: "IconTheme Color");
+    colorField(id: "iconColor", title: "IconTheme Color", initialValue: Colors.white);
     rangePickerNumberField(id: "iconOpacity", title: "IconTheme Opacity");
     doubleField(id: "actionsIconSize", title: "ActionsIconTheme Size");
     doubleField(id: "actionsIconFill", title: "ActionsIconTheme Fill");
@@ -287,14 +288,14 @@ AppBar(
     doubleField(id: "actionsIconGrade", title: "ActionsIconTheme Grade");
     doubleField(
         id: "actionsIconOpticalSize", title: "ActionsIconTheme Optical Size");
-    colorField(id: "actionsIconColor", title: "ActionsIconTheme Color");
+    colorField(id: "actionsIconColor", title: "ActionsIconTheme Color", initialValue: Colors.white);
     rangePickerNumberField(
         id: "actionsIconOpacity", title: "ActionsIconTheme Opacity");
     booleanField(id: "primary", title: "Primary");
-    booleanField(id: "centerTitle", title: "Center Title");
+    booleanField(id: "centerTitle", title: "Center Title", initialValue: false);
     booleanField(
         id: "excludeHeaderSemantics", title: "Exclude Header Semantics");
-    doubleField(id: "titleSpacing", title: "Title Spacing");
+    doubleField(id: "titleSpacing", title: "Title Spacing", initialValue: 16.0);
     rangePickerNumberField(id: "toolbarOpacity", title: "Toolbar Opacity");
     rangePickerNumberField(id: "bottomOpacity", title: "Bottom Opacity");
     doubleField(id: "toolbarHeight", title: "Toolbar Height");

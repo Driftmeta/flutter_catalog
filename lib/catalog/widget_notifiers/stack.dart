@@ -4,6 +4,8 @@ import 'package:flutter_quest/property_fields/alignment_field.dart';
 import 'package:flutter_quest/property_fields/list_field.dart';
 import 'package:flutter_quest/property_fields/text_direction_field.dart';
 
+import '../../main.dart';
+
 typedef StackProperties = ({
   Alignment? alignment,
   TextDirection? textDirection,
@@ -19,7 +21,23 @@ class StackPropertiesNotifier extends PropertiesNotifier<StackProperties> {
       textDirection: fieldValues.textDirection,
       fit: fieldValues.fit ?? StackFit.loose,
       clipBehavior: fieldValues.clipBehavior ?? Clip.hardEdge,
-      children: const [],
+      children:  [
+        Container(
+          height: 100,
+          width: 100,
+          color: themeColorNotifier.value.withOpacity(0.3),
+        ),
+        Container(
+          height: 70,
+          width: 70,
+          color: themeColorNotifier.value.withOpacity(0.6),
+        ),
+        Container(
+          height: 40,
+          width: 40,
+          color: themeColorNotifier.value,
+        ),
+      ],
     );
   }
 

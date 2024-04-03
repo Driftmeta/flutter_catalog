@@ -10,6 +10,8 @@ import 'package:flutter_quest/property_fields/list_field.dart';
 import 'package:flutter_quest/property_fields/number_field.dart';
 import 'package:flutter_quest/property_fields/string_field.dart';
 
+import '../../main.dart';
+
 typedef ListViewProperties = ({
   Axis? scrollDirection,
   bool? reverse,
@@ -62,7 +64,28 @@ class ListViewPropertiesNotifier extends PropertiesNotifier<ListViewProperties> 
       keyboardDismissBehavior: fieldValues.keyboardDismissBehavior ??
           ScrollViewKeyboardDismissBehavior.manual,
       clipBehavior: fieldValues.clipBehavior ?? Clip.hardEdge,
-      children: const [],
+      children:  [
+        Container(
+          height: 100,
+          width: 100,
+          color: themeColorNotifier.value,
+        ),
+        Container(
+          height: 100,
+          width: 100,
+          color: themeColorNotifier.value.withOpacity(0.8),
+        ),
+        Container(
+          height: 100,
+          width: 100,
+          color: themeColorNotifier.value.withOpacity(0.5),
+        ),
+        Container(
+          height: 100,
+          width: 100,
+          color: themeColorNotifier.value.withOpacity(0.3),
+        ),
+      ],
     );
   }
 

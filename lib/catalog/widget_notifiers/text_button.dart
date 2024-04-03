@@ -273,7 +273,7 @@ class TextButtonPropertiesNotifier
     doubleField(id: "minWidth", title: "Minimum Width");
     doubleField(id: "maxHeight", title: "Maximum Height");
     doubleField(id: "maxWidth", title: "Maximum Width");
-    doubleField(id: "fixedHeight", title: "Fixed Height");
+    doubleField(id: "fixedHeight", title: "Fixed Height" , initialValue: 50);
     doubleField(id: "fixedWidth", title: "Fixed Width");
     colorField(id: "iconColor", title: "Icon Color");
     doubleField(id: "iconSize", title: "Icon Size");
@@ -283,6 +283,7 @@ class TextButtonPropertiesNotifier
       id: "borderStyle",
       title: "Border Style",
       values: BorderStyle.values,
+      initialValue: BorderStyle.none,
     );
     listField(
       id: "strokeAlign",
@@ -319,7 +320,7 @@ class TextButtonPropertiesNotifier
     textStyleField(id: "textStyle", title: "Text Style");
     booleanField(id: "autofocus", title: "Autofocus");
     clipField(id: "clipBehavior", title: "Clip Behavior");
-    stringField(id: "text", title: "Text of Child");
+    stringField(id: "text", title: "Text of Child", initialValue: "Click here");
     booleanField(id: "isSemanticButton", title: "isSemantic Button");
   }
 }

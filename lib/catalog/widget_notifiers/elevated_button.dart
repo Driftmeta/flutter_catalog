@@ -218,7 +218,7 @@ class ElevatedButtonPropertiesNotifier extends PropertiesNotifier<ElevatedButton
     colorField(id: "overlayColor", title: "Overlay Color");
     colorField(id: "shadowColor", title: "Shadow Color");
     colorField(id: "surfaceTintColor", title: "Surface Tint Color");
-    doubleField(id: "elevation", title: "Elevation");
+    doubleField(id: "elevation", title: "Elevation" ,initialValue: 25.0);
     edgeInsetsField(id: "padding", title: "Padding");
     doubleField(id: "minHeight", title: "Minimum Height");
     doubleField(id: "minWidth", title: "Minimum Width");

@@ -6,6 +6,8 @@ import 'package:flutter_quest/property_fields/list_field.dart';
 import 'package:flutter_quest/property_fields/number_field.dart';
 import 'package:flutter_quest/property_fields/string_field.dart';
 
+import '../../main.dart';
+
 typedef SliderProperties = ({
   double? value,
   double? secondaryTrackValue,
@@ -98,17 +100,17 @@ class SliderPropertiesNotifier extends PropertiesNotifier<SliderProperties> {
 
   @override
   void registerFields() {
-    doubleField(id: "value", title: "Value");
+    doubleField(id: "value", title: "Value", initialValue: 0.3);
     doubleField(id: "secondaryTrackValue", title: "Secondary Track Value");
     doubleField(id: "min", title: "Minimum value");
     doubleField(id: "max", title: "Maximum value");
     intField(id: "divisions", title: "Divisions");
     stringField(id: "label", title: "Label");
-    colorField(id: "activeColor", title: "Active Color");
-    colorField(id: "inactiveColor", title: "InactiveColor");
+    colorField(id: "activeColor", title: "Active Color",  initialValue: themeColorNotifier.value.withOpacity(0.3));
+    colorField(id: "inactiveColor", title: "InactiveColor", initialValue: Colors.grey[300]);
     colorField(id: "secondaryActiveColor", title: "Secondary Active Color");
-    colorField(id: "thumbColor", title: "Thumb Color");
-    colorField(id: "overlayColor", title: "Overlay Color");
+    colorField(id: "thumbColor", title: "Thumb Color", initialValue: themeColorNotifier.value);
+    colorField(id: "overlayColor", title: "Overlay Color", initialValue: Colors.black.withOpacity(0.2));
     listField<MouseCursor>(
       id: "mouseCursor",
       title: "Mouse Cursor",

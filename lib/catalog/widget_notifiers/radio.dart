@@ -5,6 +5,8 @@ import 'package:flutter_quest/property_fields/color_field.dart';
 import 'package:flutter_quest/property_fields/list_field.dart';
 import 'package:flutter_quest/property_fields/number_field.dart';
 
+import '../../main.dart';
+
 typedef RadioProperties = ({
   int? value,
   MouseCursor? mouseCursor,
@@ -106,10 +108,10 @@ class RadioPropertiesNotifier extends PropertiesNotifier<RadioProperties> {
     );
     booleanField(id: "toggleable", title: "Toggleable");
     colorField(id: "activeColor", title: "Active Color");
-    colorField(id: "fillColor", title: "Fill Color");
+    colorField(id: "fillColor", title: "Fill Color",initialValue: themeColorNotifier.value);
     colorField(id: "focusColor", title: "Focus Color");
     colorField(id: "hoverColor", title: "Hover Color");
-    colorField(id: "overlayColor", title: "Overlay Color");
+    colorField(id: "overlayColor", title: "Overlay Color", initialValue: Colors.grey[400]);
     doubleField(id: "splashRadius", title: "Splash Radius");
     listField(
       id: "materialTapTargetSize",
