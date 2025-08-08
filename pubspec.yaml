@@ -24,13 +24,11 @@ dependencies:
     path: ./generator
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  flutter_lints: ^3.0.1
-  build_runner: ^2.4.7
+  flutter_lints: ^6.0.0
+  build_runner: ^2.5.4
 
 dependency_overrides:
-  source_gen: ^1.2.2
+  source_gen: ^2.0.0
 flutter:
   uses-material-design: true
   assets:
